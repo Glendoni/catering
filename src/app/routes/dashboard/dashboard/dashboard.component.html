@@ -10,6 +10,42 @@
                 <h1>Hello, Jane</h1>
                 <p>Welcome back to your Bootstrap 4 admin template.</p>
             </div>
+            
+            
+            
+            <div class="animated fadeIn">
+  Hello World!
+    <ul>
+    
+    <li>{{ rows[0].base_url | json}}</li>
+        
+        </ul>
+
+ 
+    
+
+</div>
+  
+
+ 
+  <ul> 
+      
+      <li *ngFor="let row of rows; let i = index">
+      
+   {{row.base_url}}
+     
+          <ul> 
+      <li *ngFor="let ros of row.metrics; let i = index">
+ {{ ros.val}}  
+          
+      </li>
+          </ul>
+          
+          {{row.lname}}
+          
+    </li>
+ 
+</ul>
             <div class="my-4">
                 <button class="btn btn-oval btn-primary btn-gradient mr-2">14 Messages</button>
                 <button class="btn btn-secondary btn-oval" type="button"><em class="ion-forward text-success mr-2 icon-lg"></em><span>View requests</span></button>

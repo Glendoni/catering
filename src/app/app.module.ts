@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HttpModule, Http } from '@angular/http';
+import { HttpModule, Http, BaseRequestOptions } from '@angular/http';
 import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AuthGuard } from './_guards/index';
+import { AlertService, AuthenticationService, UserService, PageService } from './_services/index';
 
 import { AppComponent } from './app.component';
 
@@ -37,7 +39,12 @@ export function createTranslateLoader(http: Http) {
             }
         })
     ],
-    providers: [],
+    providers: [BaseRequestOptions,
+              AuthGuard,
+        AlertService,
+        AuthenticationService,
+        UserService,
+        PageService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

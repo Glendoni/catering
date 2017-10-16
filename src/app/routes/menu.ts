@@ -10,7 +10,7 @@ const Dashboard = {
     iconclass: 'ion-ios-speedometer-outline',
     order: 1
 };
-
+/*
 const Widgets = {
     name: 'Widgets',
     link: '/widgets',
@@ -21,31 +21,29 @@ const Widgets = {
         classname: 'badge-rounded bg-primary'
     }
 };
-
+*/
 const headingComponents = {
     order: 2.1,
-    name: 'COMPONENTS',
+    name: 'CONFIG',
     heading: true
 };
 
 const Elements = {
-    name: 'Elements',
+    name: 'Service Set Up',
     link: '/elements',
     iconclass: 'ion-ios-settings',
     order: 3,
     subitems: [{
-        name: 'Buttons',
-        link: '/elements/buttons'
-    }, {
-        name: 'Bootstrap',
+        name: 'Categories',
         link: '/elements/bootstrapui'
     }, {
-        name: 'Modals',
+        name: 'Category Items',
         link: '/elements/modals'
     }, {
-        name: 'Toaster',
+        name: 'Sub Categories Items',
         link: '/elements/toaster'
-    }, {
+    }
+               /*, {
         name: 'Sweet-alert',
         link: '/elements/sweetalert'
     }, {
@@ -72,24 +70,28 @@ const Elements = {
     }, {
         name: 'Colors',
         link: '/elements/colors'
-    }]
+    }*/
+              ]
+};
+
+const headingComponentsTable = {
+    order: 3.1,
+    name: 'CLIENT SERVICE',
+    heading: true
 };
 
 const Forms = {
-    name: 'Forms',
+    name: 'My Client Details',
     link: '/forms',
     iconclass: 'ion-ios-gear-outline',
     order: 4,
     subitems: [{
-        name: 'Standard',
+        name: 'Add Client',
         link: '/forms/standard'
     }, {
-        name: 'Advanced',
+        name: 'Edit Client',
         link: '/forms/advanced'
-    }, {
-        name: 'Validation',
-        link: '/forms/validation'
-    }, {
+    }/*, {
         name: 'Dropzone',
         link: '/forms/dropzone'
     }, {
@@ -101,29 +103,35 @@ const Forms = {
     }, {
         name: 'Typeahead',
         link: '/forms/typeahead'
-    }]
+    }*/]
 };
 
+
+const headingComponentsTablel = {
+    order: 4.1,
+    name: 'BOOKINGS',
+    heading: true
+};
 const Tables = {
-    name: 'Tables',
+    name: 'My Bookings',
     link: 'tables',
     order: 5,
     iconclass: 'ion-ios-list-outline',
     subitems: [{
-        name: 'Classic',
+        name: 'Upcoming Bookings',
         link: '/tables/classic'
     }, {
-        name: 'Responsive',
+        name: 'Booking History',
         link: '/tables/responsive'
     }, {
-        name: 'Data Table',
+        name: 'Add Booking',
         link: '/tables/datatables'
     }, {
-        name: 'Ngx Datatable',
+        name: 'Edit Booking',
         link: '/tables/ngxdatatable'
     }]
 };
-
+/*
 const Charts = {
     name: 'Charts',
     link: '/charts',
@@ -154,7 +162,7 @@ const Maps = {
         link: '/maps/vector'
     }]
 };
-
+*/
 const headingMore = {
     order: 7.1,
     name: 'MORE',
@@ -239,13 +247,15 @@ const Pages = {
 export const menu = [
     headingMenu,
     Dashboard,
-    Widgets,
+    //Widgets,
     headingComponents,
     Elements,
     Forms,
+    headingComponentsTablel,
+    headingComponentsTable,
     Tables,
-    Charts,
-    Maps,
+    //Charts,
+    //Maps,
     headingMore,
     User,
     Pages

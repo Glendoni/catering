@@ -18,11 +18,11 @@
         <ul class="float-right">
             <li dropdown class="dropdown">
                 <a dropdownToggle class="dropdown-toggle has-badge">
-                    <img class="header-user-image" src="assets/img/user/01.jpg" alt="header-user-image"><sup class="badge bg-danger">3</sup>
+                    <img class="header-user-image" src="assets/img/user/01.jpg" alt="header-user-image"><sup class="badge bg-danger" [hidden]="!elementhide">3</sup>
                 </a>
                 <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown-scale">
                     <h6 class="dropdown-header">User menu</h6>
-                    <a class="dropdown-item">
+                    <a class="dropdown-item" [hidden]="!elementhide">
                         <span class="float-right badge badge-primary">4</span>
                         <em class="ion-ios-email-outline icon-lg text-primary"></em>
                         Messages
@@ -44,11 +44,18 @@
                     <div class="p-3">
                         <div class="d-flex mb-3">
                             <div class="wd-xs mr-3">
+                                <a class="dropdown-item" [routerLink]="'/elements/buttons'">
                                 <div class="card bg-gradient-primary border-0">
+                                    
                                     <div class="card-block text-white text-center">
-                                        <div class="mb-1"><em class="ion-stats-bars icon-2x"></em></div><small class="text-bold">Stats</small>
+                                        <div class="mb-1"><em class="ion-stats-bars icon-2x"></em></div>
+                                        
+                                        <small class="text-bold">Company</small>
+                                      
                                     </div>
+                                          
                                 </div>
+                                    </a>
                             </div>
                             <div class="wd-xs">
                                 <div class="card bg-gradient-info border-0">

@@ -8,12 +8,17 @@ export class AuthenticationService {
     constructor(private http: Http) { }
 
     login(username: string, password: string) {
-    return this.http.post('http://core.app/angular2login?email=' +
+ return this.http.post('http://core.app/angular2login?email=' +
                           username + '&password=' +
                           password, JSON.stringify({ email: username, password : password }))
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
+        
+        
+        
                 const user = response.json();
+        
+        console.warn(user);
                 if (user && user.token) {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user));

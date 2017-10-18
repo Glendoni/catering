@@ -16,4 +16,5 @@ export class InvoiceComponent implements OnInit {
     ngOnInit() {
     }
 
+    inv(){console.log('I was Clicked')};
 }

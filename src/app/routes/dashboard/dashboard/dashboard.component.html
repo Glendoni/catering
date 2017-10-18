@@ -7,14 +7,50 @@
                         <em class="ion-grid icon-lg"></em>
                     </a>
                 </div>
-                <h1>Hello, Jane</h1>
-                <p>Welcome back to your Bootstrap 4 admin template.</p>
+                <h1>Hello, Glen</h1>
+                <p>Catering Account...</p>
             </div>
-            <div class="my-4">
+            
+            
+            
+            <div class="animated fadeIn">
+  Hello World!
+    <ul>
+    
+    <li> <!-- {{  base_url}} --></li>
+        
+        </ul>
+
+ 
+      <ul> 
+      
+      <li *ngFor="let row of rows; let i = index">
+      
+   {{row.base_url}}
+     
+          <ul> 
+      <li *ngFor="let ros of row.metrics; let i = index">
+ {{ ros.val}}  
+          
+      </li>
+          </ul>
+          
+          {{row.lname}}
+          
+    </li>
+ 
+</ul>
+
+</div>
+  
+
+ 
+
+            <div class="my-4" [hidden]="!elementhide">
                 <button class="btn btn-oval btn-primary btn-gradient mr-2">14 Messages</button>
                 <button class="btn btn-secondary btn-oval" type="button"><em class="ion-forward text-success mr-2 icon-lg"></em><span>View requests</span></button>
             </div>
-            <div class="h-scroll">
+            <div class="h-scroll" [hidden]="!elementhide">
                 <div class="row">
                     <div class="col-8 col-md-4">
                         <div class="cardbox">
@@ -61,7 +97,7 @@
                 </div>
             </div>
             <div class="cardbox">
-                <div class="cardbox-heading clearfix">
+                <div class="cardbox-heading clearfix" [hidden]="!elementhide">
                     <div class="float-md-left"><strong>Overview of sales progress</strong>
                         <br><small>Relevance per month of the current year</small></div>
                     <div class="mb-2 hidden-sm-up"></div>
@@ -74,10 +110,10 @@
                         </select>
                     </div>
                 </div>
-                <div style="margin: 0 -8px;">
+                <div style="margin: 0 -8px;" [hidden]="!elementhide">
                     <div flot [dataset]="splineData" [options]="splineOptions" height="275" class="flot-chart flot-chart-lg flot-legend-left"></div>
                 </div>
-                <div class="cardbox-body">
+                <div class="cardbox-body" [hidden]="!elementhide">
                     <div class="h-scroll">
                         <div class="row text-center">
                             <div class="col-sm-4"><small>Visitors</small>
@@ -102,7 +138,7 @@
                     </div>
                 </div>
             </div>
-            <div class="cardbox cardbox-map">
+            <div class="cardbox cardbox-map" [hidden]="!elementhide">
                 <agm-map #agmMap [latitude]="map.lat" [longitude]="map.lng" [zoom]="map.zoom" [scrollwheel]="map.scrollwheel" [style.height]="'240px'" [styles]="MapStyles" [disableDefaultUI]="map.disableDefaultUI" [streetViewControl]="false" class="gmap gmap-md">
                     <agm-marker [latitude]="map.lat" [longitude]="map.lng" [title]="'You'" [iconUrl]="'assets/img/marker.png'"></agm-marker>
                 </agm-map>
@@ -117,7 +153,7 @@
                     </div>
                 </div>
             </div>
-            <div class="cardbox">
+            <div class="cardbox" [hidden]="!elementhide">
                 <!-- START table-responsive-->
                 <div class="table-responsive">
                     <table class="table">
@@ -197,7 +233,7 @@
                 <!-- END table-responsive-->
             </div>
         </div>
-        <div class="col-xl-3">
+        <div class="col-xl-3" [hidden]="!elementhide">
             <div class="cardbox">
                 <div class="cardbox-heading">
                     <div>Monthly performance</div>

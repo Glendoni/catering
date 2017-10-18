@@ -7,6 +7,13 @@ declare var google: any;
 import { PagetitleService } from '../../../core/pagetitle/pagetitle.service';
 import { ColorsService } from '../../../core/colors/colors.service';
 
+import { Router, ActivatedRoute } from '@angular/router';
+import 'rxjs/add/operator/map';
+//import {Observable} from "rxjs";
+
+import { Page } from '../../../_models/index';
+import { AlertService, AuthenticationService, UserService,PageService } from '../../../_services/index';
+
 @Component({
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
@@ -311,12 +318,27 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
         }
     };
 
-    constructor(pt: PagetitleService, private colors: ColorsService, private mapWrapper: GoogleMapsAPIWrapper) {
+      usd: object[] = [];
+    response: string[];
+    rows: object[] = [];
+     
+     
+    constructor(pt: PagetitleService, 
+                private colors: ColorsService, 
+                private mapWrapper: GoogleMapsAPIWrapper,
+               private route: ActivatedRoute,
+        private router: Router,
+        private authenticationService: AuthenticationService,
+        private alertService: AlertService,
+        private pageService: PageService,
+        private userService: UserService) {
         pt.setTitle('Dashboard');
     }
 
     ngOnInit() {
-
+        
+             
+this.loadAllUsers();
         // Simulate real time knob chart
         setInterval(() => {
             this.knobLoaderData1 = Math.floor(Math.random() * 20) + 20;
@@ -350,6 +372,53 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
 
     }
 
+     
+     
+     
+           private loadAllUsers() {
+        this.pageService.getPages().subscribe(page => {
+             //this.usd =  page;
+            this.rows = page.usd;
+            
+this.response = Object.keys(page).map(key => page[key])
+            
+            
+            
+        console.log(this.response);
+     // this.rows.push(page.usd);
+            console.log(Array.of(page.usd))
+           // this.currentUser = usd.current;
+         // glendonsmall@yahoo.co.uk  doctor1
+             
+ 
+      // this.usdu =   usds;
+ 
+ //console.log(JSON.stringify(this.usdu));
+            
+            //console.log(Object.keys(usds.usd));
+          var header = page.usd;
+for (var prop in header) {
+        console.log("Key:" + prop);
+        console.log("Value:" + header);
+    
+    
+        
+         console.log( header['id'] );
+        
+    
+    
+    
+    }
+            
+            //console.log(JSON.stringify(usds))
+        // this.message = users.message;
+        //this.currentUser  =  page.current;
+  });
+          
+     
+  }
+     
+     
     ngAfterViewInit() {
 
         // Enable Google Maps Directions API to use Routes

@@ -13,6 +13,7 @@ import { PagetitleService } from '../../core/pagetitle/pagetitle.service';
 export class HeaderComponent implements OnInit {
 
     sidebarVisible: true;
+    elementhide = true;
 
     constructor(public settings: SettingsService, public pt: PagetitleService) { }
 

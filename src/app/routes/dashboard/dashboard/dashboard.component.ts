@@ -27,6 +27,7 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
     public dt: Date = new Date();
     tm;
 
+    elementhide = false;
     // Sparklines
     sparkValue1 = [4, 2, 3, 5, 3, 2, 3, 4, 6];
     sparkValue2 = [5, 3, 4, 6, 5, 3, 4, 3, 4];

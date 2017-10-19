@@ -1,12 +1,11 @@
 {
   "name": "ng4",
   "version": "0.0.0",
+  "license": "MIT",
   "description": "Dasha - Bootstrap Admin App + Angular4",
   "author": "@themicon_co",
   "scripts": {
     "ng": "ng",
-    "install": "napa",
-    "napa": "napa",
     "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
@@ -17,13 +16,6 @@
     "deploy": "git push origin master && git push heroku master"
   },
   "private": true,
-  "napa": {
-    "flot": "flot/flot#v0.8.3",
-    "jquery.flot.spline": "miloszfalinski/jquery.flot.spline",
-    "ika.jvectormap": "kakirigi/ika.jvectormap",
-    "sidebysideimproved": "pkoltermann/sidebysideimproved",
-    "nestable": "dbushell/Nestable"
-  },
   "dependencies": {
     "@agm/core": "1.0.0-beta.0",
     "@angular/animations": "4.3.1",
